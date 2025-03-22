@@ -14,7 +14,7 @@ const Field = () => {
   const sdk = useSDK<FieldAppSDK>();
 
   const [releaseId, setReleaseId] = useState<string>(
-    sdk.field.getValue()["id"]?.toString()
+    sdk.field.getValue()?.["id"]?.toString()
   );
   const debouncedReleaseId = useDebounceValue(releaseId);
   const album = useAlbum(debouncedReleaseId);
